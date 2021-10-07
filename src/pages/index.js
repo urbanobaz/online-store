@@ -23,12 +23,6 @@ export default function Home() {
           name="description"
           content="Your favorite trading cards delivered!"
         />
-        <link rel="preconnect" href="https://app.snipcart.com" />
-        <link rel="preconnect" href="https://cdn.snipcart.com" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css"
-        />
       </Head>
 
       <Container>
@@ -43,11 +37,11 @@ export default function Home() {
           </div>
         </div> */}
 
-        <p className={styles.cart}>
+        {/* <p className={styles.cart}>
           <FaShoppingCart />
           <span className="snipcart-total-price">$0.00</span>
           <Button className="snipcart-checkout">View Cart</Button>
-        </p>
+        </p> */}
 
         <h2 className="sr-only">Available Cards</h2>
         <ul className={styles.products}>
@@ -85,17 +79,6 @@ export default function Home() {
           })}
         </ul>
       </Container>
-
-      <script
-        async
-        src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"
-      ></script>
-      <div
-        hidden
-        id="snipcart"
-        data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
-        data-config-modal-style="side"
-      ></div>
     </Layout>
   );
 }

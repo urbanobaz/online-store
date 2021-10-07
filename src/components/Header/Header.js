@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
+import Link from "next/link";
+import { FaShoppingCart } from "react-icons/fa";
 
-import Container from '@components/Container';
+import Container from "@components/Container";
 
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
@@ -14,17 +14,15 @@ const Header = () => {
             <a>Hyper Bros. Trading Cards</a>
           </Link>
         </p>
-        {/* <p className={styles.headerCart}>
-          <button>
+        <p className={styles.headerCart}>
+          <button className="snipcart-checkout">
             <FaShoppingCart />
-            <span>
-              $0.00
-            </span>
+            <span className="snipcart-total-price">$0.00</span>
           </button>
-        </p> */}
+        </p>
       </Container>
     </header>
-  )
-}
+  );
+};
 
 export default Header;
