@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 const Footer = ({ ...rest }) => {
   return (
     <footer className={styles.footer} {...rest}>
-      &copy; Hyper Bros. Trading Cards, {new Date().getFullYear()}
+      &copy; Super Smash Trading Cards, {new Date().getFullYear()}
     </footer>
   )
 }

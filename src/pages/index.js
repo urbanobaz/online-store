@@ -18,12 +18,12 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Hyper Bros Trading</title>
+        <title>Super Smash Trading Cards</title>
         <meta name="description" content="Your favorite trading cards delivered!" />
       </Head>
 
       <Container>
-        <h1 className="sr-only">Hyper Bros. Trading Cards</h1>
+        <h1 className="sr-only">Super Smash Trading Cards</h1>
 
         {/* <div className={styles.discover}>
           <div className={styles.search}>
