@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
 
       <Container>
-        <h1 className="sr-only">Super Smash Trading Cards</h1>
+        <h1 className="sr-only">Smash Trading Cards</h1>
 
         {/* <div className={styles.discover}>
           <div className={styles.search}>
