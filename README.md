@@ -1,4 +1,4 @@
-# Hyper Bros Trading Workshop Starter
+# Super Smash Bros Trading Workshop Starter
 
 Hey there! This is a starter project for my workshop [](https://github.com/colbyfayock/hyper-bros-trading-workshop). If you're just browsing around, learn more about my workshop over at: https://github.com/colbyfayock/hyper-bros-trading-workshop
 
