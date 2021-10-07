@@ -94,6 +94,7 @@ export default function Home() {
         hidden
         id="snipcart"
         data-api-key={process.env.NEXT_PUBLIC_SNIPCART_API_KEY}
+        data-config-modal-style="side"
       ></div>
     </Layout>
   );
