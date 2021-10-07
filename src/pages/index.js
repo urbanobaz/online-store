@@ -1,15 +1,15 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { FaShoppingCart } from "react-icons/fa";
 
-import Layout from '@components/Layout';
-import Container from '@components/Container';
-import Button from '@components/Button';
+import Layout from "@components/Layout";
+import Container from "@components/Container";
+import Button from "@components/Button";
 
-import products from '@data/products.json';
+import products from "@data/products.json";
 
-import styles from '@styles/Home.module.scss'
+import styles from "@styles/Home.module.scss";
 
 export default function Home() {
   // function handleOnSearch() {
@@ -19,7 +19,14 @@ export default function Home() {
     <Layout>
       <Head>
         <title>Super Smash Trading Cards</title>
-        <meta name="description" content="Your favorite trading cards delivered!" />
+        <meta
+          name="description"
+          content="Your favorite trading cards delivered!"
+        />
+        <link rel="preconnect" href="https://app.snipcart.com" />
+        <link rel="preconnect" href="https://cdn.snipcart.com" />
+        <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.css" />
+
       </Head>
 
       <Container>
@@ -36,38 +43,40 @@ export default function Home() {
 
         <p className={styles.cart}>
           <FaShoppingCart />
-          <span>
-            $0.00
-          </span>
+          <span>$0.00</span>
           <Button>View Cart</Button>
         </p>
 
         <h2 className="sr-only">Available Cards</h2>
         <ul className={styles.products}>
-          {products.map(product => {
+          {products.map((product) => {
             return (
               <li key={product.id}>
                 <Link href={`/products/${product.id}`}>
                   <a>
                     <div className={styles.productImage}>
-                      <Image width="864" height="1200" src={product.image} alt={product.title} />
+                      <Image
+                        width="864"
+                        height="1200"
+                        src={product.image}
+                        alt={product.title}
+                      />
                     </div>
-                    <h3 className={styles.productTitle}>
-                      { product.title }
-                    </h3>
-                    <p className={styles.price}>
-                      ${ product.price }
-                    </p>
+                    <h3 className={styles.productTitle}>{product.title}</h3>
+                    <p className={styles.price}>${product.price}</p>
                   </a>
                 </Link>
                 <p>
                   <Button>Add to Cart</Button>
                 </p>
               </li>
-            )
+            );
           })}
         </ul>
       </Container>
+
+      <script async src="https://cdn.snipcart.com/themes/v3.2.1/default/snipcart.js"></script>
+      <div hidden id="snipcart" data-api-key="ZTUyZGNhMGEtOTk0Ni00YmJkLWE5ZmItNGU4M2NkMjlmYmVmNjM3NjkyMjM2MDc2NTUxMzcw"></div>
     </Layout>
-  )
+  );
 }
