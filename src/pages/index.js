@@ -1,7 +1,9 @@
+import { useState } from "react"
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { FaShoppingCart } from "react-icons/fa";
+import Fuse from "fuse.js"
 
 import Layout from "@components/Layout";
 import Container from "@components/Container";
@@ -12,9 +14,26 @@ import products from "@data/products.json";
 import styles from "@styles/Home.module.scss";
 
 export default function Home() {
-  // function handleOnSearch() {
-  //   // Do something here
-  // }
+  const [query, setQuery] = useState();
+
+  let activeProducts = products;
+
+  const fuse = new Fuse(products, {
+    keys: ['title']
+  });
+  
+  if(query) {
+    activeProducts = fuse.search(query).map(result => {
+      return {
+        ...result.item
+      }
+    })
+  }
+  
+
+  function handleOnSearch(event) {
+    setQuery(event.currentTarget.value)
+  }
   return (
     <Layout>
       <Head>
@@ -28,14 +47,14 @@ export default function Home() {
       <Container>
         <h1 className="sr-only">Smash Trading Cards</h1>
 
-        {/* <div className={styles.discover}>
+        <div className={styles.discover}>
           <div className={styles.search}>
             <h2>Search</h2>
             <form>
               <input onChange={handleOnSearch} type="search" />
             </form>
           </div>
-        </div> */}
+        </div>
 
         {/* <p className={styles.cart}>
           <FaShoppingCart />
@@ -45,7 +64,7 @@ export default function Home() {
 
         <h2 className="sr-only">Available Cards</h2>
         <ul className={styles.products}>
-          {products.map((product) => {
+          {activeProducts.map((product) => {
             return (
               <li key={product.id}>
                 <Link href={`/products/${product.id}`}>

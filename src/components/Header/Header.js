@@ -8,18 +8,19 @@ import styles from "./Header.module.scss";
 
 const Header = () => {
   const { cart = {} } = useSnipcart();
+  
   return (
     <header className={styles.header}>
       <Container className={styles.headerContainer}>
         <p className={styles.headerTitle}>
           <Link href="/">
-            <a>Hyper Bros. Trading Cards</a>
+            <a>Super Smash Trading Cards</a>
           </Link>
         </p>
         <p className={styles.headerCart}>
           <button className="snipcart-checkout">
             <FaShoppingCart />
-            <span className="snipcart-total-price">{cart.subtotal}</span>
+            <span>${cart.subtotal}</span>
           </button>
         </p>
       </Container>

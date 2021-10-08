@@ -3,7 +3,7 @@
 .header {
 
   width: 100%;
-  background-color: $color-brand-blue;
+  background-color: $color-brand-red;
   color: white;
   padding: .5em 0;
 
@@ -20,7 +20,7 @@
 }
 
 .headerTitle {
-  color: $color-brand-yellow;
+  color: white;
   font-family: $font-family-display;
   font-weight: $font-weight-display-bold;
   font-size: 2em;
@@ -40,7 +40,7 @@
     cursor: pointer;
 
     svg {
-      color: $color-brand-yellow;
+      color: whitesmoke;
       margin-right: .5em;
     }
 
